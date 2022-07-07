@@ -13,14 +13,14 @@ import { features} from './components/data/features'
 import Head from 'next/head'
 import icon from '../icon.ico'
 
-export async function getStaticProps() {
-  return {
-    props: {},
-    revalidate: 10
-  }
-}
+// export async function getStaticProps() {
+//   return {
+//     props: {},
+//     revalidate: 10
+//   }
+// }
 
-const Home: NextPage = ({}) => {
+const Home: NextPage = () => {
   const [displayForm, setDisplayForm] = useState(false);
   const [displayDocument, setDisplayDocument] = useState(false);
   const [pickedCourse, setPickedCourse] = useState('История');
