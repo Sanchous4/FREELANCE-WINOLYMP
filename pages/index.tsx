@@ -16,7 +16,7 @@ import icon from '../icon.ico'
 export async function getStaticProps() {
   return {
     props: {},
-    revalidate: false
+    revalidate: 10
   }
 }
 
