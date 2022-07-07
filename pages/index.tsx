@@ -10,6 +10,9 @@ import { offersCards } from './components/data/offers'
 import PrivacyPolicy from './components/PrivacyPolicy'
 import { features} from './components/data/features'
 
+import Head from 'next/head'
+import icon from '../icon.ico'
+
 export async function getStaticProps() {
   return {
     props: {},
@@ -41,6 +44,9 @@ const Home: NextPage = ({}) => {
 
   return (
     <div>
+      <Head>
+          <link rel="shortcut icon" href={icon.src}/>
+      </Head>
       <HeaderTag callBackToShow = {callBackToShowForm}/>
       <FeaturesTag features={features} feature={feature} setFeature={setFeature}/>
       <AchievementsTag/>
