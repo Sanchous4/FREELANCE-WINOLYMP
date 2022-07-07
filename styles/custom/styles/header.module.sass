@@ -1,0 +1,174 @@
+@import './modules/font-colors'
+@import './modules/font-interfaces'
+// @import './modules/no-selection'
+
+//* -----------------------
+//* -----------------------
+//* HEADER
+$header-height: calc(25vh + 25vw)
+$grey-background: #323C4B
+
+.text-box
+    display: flex
+    flex-direction: column
+    justify-content: center
+    position: absolute
+    z-index: 10
+    height: $header-height
+    width: 80%
+    @media (max-width: 900px)
+        width: 95%
+
+.header-background
+    display: flex
+    height: $header-height
+    justify-content: flex-end
+    background: $grey-background
+
+.header-img > .img-wrapper
+    // object-fit: cover
+    position: relative
+    overflow: hidden
+    height: $header-height
+    width: calc(50vw + 20vh)
+
+    @media (max-aspect-ratio: 1/1)
+        display: none
+
+//* -----------------------
+//* -----------------------
+//*TEXT
+
+$contact-info-font-size: calc(2px + 1vh + 1vw)
+
+.contact-info-img-view
+    margin-bottom: -0.5%
+    float: none
+    @media (max-width: 900px)
+        margin-bottom: 0.5%
+
+.contact-info-img-view > .img-wrapper
+    height: calc(0.6vh + 0.6vw)
+
+.contact-info-img
+    float: left
+
+.contact-info-phone-options
+    margin-right: 18%
+    @media (max-aspect-ratio: 1/1)
+        margin-right: 0%
+
+.contact-info-winolymp
+    margin-right: auto
+
+.contact-info-img > .img-wrapper
+    opacity: 0
+    height: calc(0.75vh + 0.75vw)
+
+.contact-info-win
+    @extend .font-interface
+    font-weight: 800
+    float: left
+    color: $white-text
+    font-size: $contact-info-font-size
+
+.contact-info-olymp
+    @extend .font-interface
+    float: left
+    font-weight: 800
+    color: $yellow-text
+    font-size: $contact-info-font-size
+
+.contact-info-phone
+    @extend .font-interface
+    // margin-left: 20%
+    // margin-right: 4%
+    float: left
+    color: $white-text
+    font-weight: 800
+    font-size: $contact-info-font-size
+
+.contact-info
+    // width: 1000px
+    display: flex
+    flex-direction: row
+    justify-content: flex-end
+    margin-right: 10%
+    // padding-top: 1%
+    // padding-bottom: 1%
+
+.contact-info-phone-separator
+    width: 3vw
+    height: 1vh
+    float: left
+
+.contact-info-take-phone
+    cursor: pointer
+    float: left
+    @extend .font-interface-no-up
+    text-decoration: underline
+    color: #CBC9C9
+    font-size: $contact-info-font-size
+
+.contact-info-take-phone:hover
+    color: white
+    text-decoration: none
+
+$main-info-font-size: calc(2.7vh + 2.7vw)
+
+.win
+    @extend .font-interface
+    font-weight: 800
+    color: $yellow-text
+    font-size: $main-info-font-size
+
+.after-win
+    @extend .font-interface
+    font-weight: 800
+    color: $white-text
+    font-size: $main-info-font-size
+
+$trial-info-font-size: calc(0.7vh + 0.7vw)
+
+.trial-course
+    @extend .font-interface
+    font-weight: 400
+    color: $white-text
+    font-size: $trial-info-font-size
+
+.trial-course-free
+    @extend .font-interface
+    font-weight: 800
+    color: $yellow-text
+    font-size: $trial-info-font-size
+
+.take-btn
+    border-radius: calc((1vh + 1vw)*0.15)
+    cursor: pointer
+    @extend .font-interface
+    border: none
+    background: white
+    font-size: $contact-info-font-size
+    padding: 2vh 4vw
+    font-weight: 400
+
+.take-btn:hover
+    box-shadow: 0px 0px 20px 1px white
+
+.take-btn:active
+    background: #FDEC53
+    box-shadow: none
+
+//*TEXT LAYOUT
+
+.contact-info
+    margin-bottom: 5%
+
+.main-text
+    margin-bottom: 4%
+
+.trial-text
+    margin-bottom: 4%
+
+.take-btn-div
+    margin-bottom: 0%

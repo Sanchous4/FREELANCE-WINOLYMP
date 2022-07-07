@@ -1,0 +1,33 @@
+@import './modules/font-colors'
+@import './modules/font-interfaces'
+@import './modules/font-sizes'
+
+.footer-content
+    display: flex
+    justify-content: space-between
+    align-content: center
+    background: #CBC9C9
+    height: 10vh
+    width: 100vw
+
+.footer-text
+    @extend .font-interface-no-up
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    width: 30%
+    font-size: $font-18px
+    text-align: center
+
+.footer-info
+    cursor: pointer
+    text-decoration: underline
+    text-underline-position: under
+
+.footer-info:hover
+    text-decoration: none
+
+.footer-olympwin
+    font-weight: 700
+    flex-direction: column

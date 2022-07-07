@@ -1,0 +1,113 @@
+@import './modules/font-colors'
+@import './modules/font-interfaces'
+@import './modules/font-sizes'
+
+$yellow-transparent: rgba(253, 236, 83, 0.5)
+$yellow-normal: rgba(253, 236, 83, 1)
+
+@mixin align-center
+    display: flex
+    align-items: center
+    justify-content: center
+
+.form-div
+    // display: none !important
+    position: fixed
+    z-index: 10
+    overflow: auto
+    @include align-center
+    height: 100vh
+    width: 100vw
+    top: 0
+    left: 0
+    background-color: rgb(0,0,0)
+    background-color: rgba(0,0,0,0.4)
+    @media (max-aspect-ratio: 1/1)
+        padding-top: 5%
+        align-items: start
+
+.form-pick-course-div
+    display: flex
+    justify-content: space-between
+
+.form-email-p
+    color: white
+    @extend .font-interface-no-up
+    font-size: $font-24px
+
+.form-email-submit
+    border: none
+    background-color: white
+    border-radius: calc(0.7vh + 0.7vw)
+    padding: 1% 2%
+    @extend .font-interface-no-up
+    font-size: $font-24px
+    width: 30%
+
+.form-email-submit:active
+    box-shadow: 0px 0px 15px white
+
+.form-pick-course-label
+    color: white
+    @extend .font-interface-no-up
+    font-size: $font-24px
+
+.form-email-p
+    color: white
+    @extend .font-interface-no-up
+    font-size: $font-24px
+
+.form-email-input::placeholder
+    color: #000000a0
+
+.form-email-input
+    padding: 1% 2%
+    background-color: $yellow-normal
+    border-radius: calc(0.7vh + 0.7vw)
+    color: black
+    @extend .font-interface-no-up
+    font-size: $font-24px
+    outline: none
+    border: none
+
+.form-pick-course-button
+    border: none
+    background-color: $yellow-transparent
+    border-radius: calc(2vh + 2vw)
+    padding: 1% 2%
+    @extend .font-interface-no-up
+    font-size: $font-24px
+    width: 30%
+
+.form-pick-course-button:hover
+    letter-spacing: 2px
+
+// .form-picked-course-button
+//     background-color: $yellow-normal !important
+
+.form-form
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    background: #000
+    width: 85vh
+    height: 55vh
+    border-radius: calc((1vh + 1vw)*0.75)
+    padding: 1% 2%
+
+    @media (max-aspect-ratio: 1/1)
+        padding: 2% 4%
+        width: 85vw
+        height: 55vw
+
+.form-logo
+    @extend .font-interface
+    font-size: $font-24px
+    font-weight: 700
+    color: white
+
+.form-form-success
+    color: white
+    @extend .font-interface-no-up
+    text-align: center
+    font-size: $font-36px

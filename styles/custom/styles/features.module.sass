@@ -1,0 +1,164 @@
+@import './modules/font-colors'
+@import './modules/font-interfaces'
+@import './modules/font-sizes'
+@import './modules/features.animation.module'
+
+$background-color: #FDEC53
+
+.features-box
+    // overflow: hidden
+    display: flex
+    flex-direction: column
+    justify-content: center
+    // align-content: center
+    align-items: center
+    background: $background-color
+    height: 100vh
+    width: 100vw
+    @media (max-aspect-ratio: 1/1)
+        height: 125vw
+
+$offset-text: 2.5vh
+
+.features-box-label
+    font-size: $font-36px
+    @extend .font-interface-no-up
+    margin-bottom: $offset-text
+    font-weight: 800
+    color: $black-text
+
+$features-box-size: calc(15vw + 50vh)
+
+.features-box-options
+    margin-bottom: $offset-text
+    width: 70vh
+    display: flex
+    justify-content: space-between
+    @media (max-aspect-ratio: 1/1)
+        width: 90vw
+
+.features-box-option
+    cursor: pointer
+    font-size: $font-24px
+    @extend .font-interface-no-up
+    font-weight: 400
+    float: left
+    @media (min-aspect-ratio: 1/1)
+        font-size: 3vh
+
+.features-box-option:hover
+    text-decoration: underline
+    text-underline-position: under
+
+.features-box-option-selected
+    font-weight: 800 !important
+
+$radius: calc(0.5vw + 0.5vh)
+
+.features-box-slider
+    border-radius: $radius
+    background: white
+    width: 78vh
+    height: 78vh
+    @media (max-aspect-ratio: 1/1)
+        width: 90vw
+        height: 90vw
+
+.features-box-slider-img
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-radius: $radius $radius 0 0
+    width: 100%
+    height: 80%
+    background-size: cover
+    background-position: 50% 50%
+    // background-image: url("https://media-exp1.licdn.com/dms/image/C560BAQHMnA03XDdf3w/company-logo_200_200/0/1519855918965?e=2147483647&v=beta&t=J3kUMZwIphc90TFKH5oOO9Sa9K59fimgJf-s_okU3zs")
+    // animation: showImageTheory 0.5s
+
+.features-box-slider-points
+    display: flex
+    justify-content: space-around
+    align-items: center
+    // background: #ff00001d
+    width: 100%
+    height: 20%
+
+.slider-point
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    // background: #0040ff6d
+    width: 20%
+    height: 70%
+
+.slider-point-ava
+    margin-bottom: -7%
+    text-align: center
+    vertical-align: middle
+    padding-top: 2%
+    height: 50%
+    width: 80%
+
+    // background: red
+
+.slider-point-ava > div > .img-wrapper
+    width: 30%
+
+.slider-point-ava > *
+    display: flex
+    justify-content: center
+
+.slider-point-text
+    @extend .font-interface-no-up
+    font-size: $font-18px
+    text-align: center
+    vertical-align: middle
+    height: 50%
+    width: 100%
+    @media (min-aspect-ratio: 1/1)
+        font-size: 2vh
+    // background: green
+
+$arrows-size: calc((15vw + 50vh)*0.04)
+$arrows-color: brightness(0) saturate(100%) invert(99%) sepia(100%) saturate(1317%) hue-rotate(328deg) brightness(108%) contrast(98%)
+
+.carousel-arrow
+    cursor: pointer
+    margin: 0 1%
+    padding: 0.2%
+    border: 0.25vh solid $background-color
+    border-radius: 0.25vw
+    background: black
+    display: flex
+    justify-content: center
+    align-items: center
+
+    .img-wrapper
+        cursor: pointer
+        position: relative
+        width: $arrows-size
+        display: flex
+        justify-content: space-between
+        // height: 1vw
+        // filter: $arrows-color
+
+.features-box-slider-btns
+    padding-bottom: 3.5%
+    width: 15%
+    display: flex
+    justify-content: space-around
+    align-self: flex-end
+
+$active-btn-color: #727272fd
+
+.features-box-slider-btn-active
+    background: $active-btn-color !important
+    border: 0.5vh solid $active-btn-color !important
+
+.features-box-slider-btn
+    background: white
+    cursor: pointer
+    border: 0.5vh solid white
+    border-radius: 100%

@@ -1,0 +1,143 @@
+@import './modules/font-colors'
+@import './modules/font-interfaces'
+@import './modules/font-sizes-height'
+
+$offer-border-radius: 10px
+
+.align-center
+    display: flex
+    justify-content: center
+    align-content: center
+    align-items: center
+
+.offers-box
+    padding-top: 5vh
+    display: flex
+    justify-content: center
+    align-content: center
+    width: 100vw
+    height: 100vh
+    background: $yellow-text
+
+.offers-main-text
+    text-align: center
+    @extend .font-interface-no-up
+    grid-column-start: 1
+    grid-column-end: 4
+    // width: 100vw
+    color: black
+    font-weight: 800
+    font-size: $font-36px
+
+.offers-offer-box-label
+    border-radius: $offer-border-radius $offer-border-radius 0 0
+    @extend .font-interface-no-up
+
+    display: flex
+    justify-content: center
+    align-content: flex-start
+    align-items: flex-start
+    padding-top: 8%
+
+    font-size: $font-54px
+    height: 25%
+    font-weight: 800
+    color: $yellow-text
+    background: $black-text
+
+.offers-offer-box-price
+    @extend .font-interface-no-up
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-content: center
+    justify-items: center
+    align-items: center
+    font-size: $font-48px
+    height: 25%
+    font-weight: 800
+    background: white
+
+.offers-content-box
+    display: grid
+    grid-gap: calc(4vh + 4vw)
+    justify-items: center
+    align-items: center
+    justify-content: center
+    // align-content: center
+    height: 80vh
+    width: 90vw
+    grid-template-columns: repeat(3, 1fr)
+
+@media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 2/1)
+    .offers-box
+        height: 170vh
+    .offers-offer-box:nth-child(4)
+        grid-column-start: 1
+        grid-column-end: 3
+    .offers-content-box
+        grid-template-columns: 1fr 1fr
+    .offers-main-text
+        grid-column-start: 1
+        grid-column-end: 3
+@media (max-aspect-ratio: 1/1)
+    .offers-box
+        height: 240vh
+    .offers-offer-box
+        height: 60vh
+    .offers-content-box
+        grid-template-columns: 1fr
+    .offers-main-text
+        grid-column-start: 1
+        grid-column-end: 2
+
+.offers-offer-box-discount
+    @extend .align-center
+    color: white
+    height: 25%
+    background: #323C4B
+
+.offers-offer-box-discount-p
+    @extend .font-interface-no-up
+    font-size: $font-24px
+    font-weight: 800
+    color: white
+    text-align: center
+
+$offer-box-shadow: calc((1vw + 1vh)*0.5)
+
+.offers-offer-box
+    box-shadow: $offer-box-shadow $offer-box-shadow $offer-box-shadow $offer-box-shadow #00000063
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-content: center
+    width: calc(20vh + 20vw)
+    min-width: 20vh
+    max-width: 40vh
+    height: 70vh
+    background: green
+    border-radius: $offer-border-radius
+
+.offers-offer-button-div
+    @extend .align-center
+    height: 25%
+    border-radius: 0 0 $offer-border-radius $offer-border-radius
+
+    .offers-offer-box-button
+        cursor: pointer
+        @extend .font-interface-no-up
+        font-size: $font-54px
+        font-weight: 800
+        height: 100%
+        width: 100%
+        border: none
+        border-radius: 0 0 $offer-border-radius $offer-border-radius
+
+    .offers-offer-box-button:hover
+        color: white
+        background: black
+
+    .offers-offer-box-button:active
+        font-size: calc(10px + 2.5vh * 2.1)
+        background: black
