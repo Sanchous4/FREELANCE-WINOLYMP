@@ -1,7 +1,7 @@
 import type {NextPage} from 'next';
 import styles from '../../styles/custom/styles/privacy.module.sass'
-import { Props } from './types/PrivacyPolicy'
-import { PrivacyPolicyText } from './data/PrivacyPolicyText';
+import { Props } from '../../modules/types/PrivacyPolicy'
+import { PrivacyPolicyText } from '../../data/PrivacyPolicyText';
 
 const PrivacyPolicy: NextPage<Props> = (props) => {
     const {display, callBackToHide} = props;
@@ -20,7 +20,7 @@ const PrivacyPolicy: NextPage<Props> = (props) => {
             <div className={styles["document-body"]} onClick = {(event) => {preventHideForm(event)}}>
                 <span className={styles["document-name"]}>политика конфиденциальности</span>
                 <div className={styles["document-description"]}>
-                    { PrivacyPolicyText.split('\n').map((item, index) => <p key={index}>{item}<br></br></p>) }
+                    { PrivacyPolicyText.split('\n')?.map((item, index) => <p key={index}>{item}<br></br></p>) }
                 </div>
             </div>
         </div>

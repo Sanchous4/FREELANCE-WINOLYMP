@@ -1,7 +1,7 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import styles from '../../styles/custom/styles/footer.module.sass'
-import {showPopUp as Props} from '../components/types/common/ShowPopUp'
+import {showPopUp as Props} from '../../modules/types/common/ShowPopUp'
 
 
 const FooterTag : NextPage<Props> = (props) => {

@@ -3,7 +3,7 @@ import BluredHeader from '../../source/imgs/blur-header.png'
 import Star from '../../source/imgs/star.png'
 import type { NextPage } from 'next'
 import styles from '../../styles/custom/styles/header.module.sass'
-import { Props } from './types/HeaderTag'
+import { Props } from '../../modules/types/HeaderTag'
 
 const HeaderTag : NextPage<Props> = (props) => {
   const  {callBackToShow} = props

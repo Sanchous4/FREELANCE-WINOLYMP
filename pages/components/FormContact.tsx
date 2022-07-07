@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import type {NextPage} from 'next';
 import styles from '../../styles/custom/styles/form.module.sass'
-import { Props } from './types/FormContact'
-import { offerCard } from './types/OffersTag';
-import { event } from './types/common/Event';
-import { Keyframes } from './tools/KeyFrames';
+import { Props } from '../../modules/types/FormContact'
+import { offerCard } from '../../modules/types/OffersTag';
+import { event } from '../../modules/types/common/Event';
+import { Keyframes } from '../../modules/components/tools/KeyFrames';
 
 const FormContact: NextPage<Props> = (props) => {
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -35,7 +35,7 @@ const FormContact: NextPage<Props> = (props) => {
 
         const checkEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(phoneNumber);
 
-        const checkPhoneNumber = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/.test(phoneNumber);
+        const checkPhoneNumber = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g.test(phoneNumber);
 
         const checkLength = phoneNumber.length > 8
 
@@ -73,7 +73,7 @@ const FormContact: NextPage<Props> = (props) => {
                 <label htmlFor='' className={styles["form-pick-course-label"]}>Меня интересует</label>
                 <div className={styles["form-pick-course-div"]}>
                     {
-                        offers.map((item : offerCard) => (
+                        offers?.map((item : offerCard) => (
                             <button
                                 key={item.id.toString()} 
                                 style = {{'background' : item.name === pickedCourse ? 'rgba(253, 236, 83, 1)' : 'rgba(253, 236, 83, 0.5)'}} 

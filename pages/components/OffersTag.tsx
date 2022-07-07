@@ -1,8 +1,8 @@
 import React from 'react';
 import type {NextPage} from 'next';
 import styles from '../../styles/custom/styles/offers.module.sass'
-import { Props } from './types/OffersTag';
-import { offerCard } from './types/OffersTag';
+import { Props } from '../../modules/types/OffersTag';
+import { offerCard } from '../../modules/types/OffersTag';
 
 const OffersTag : NextPage<Props> = (props) => {
     const {callBackToShow, offers} = props
@@ -13,7 +13,7 @@ const OffersTag : NextPage<Props> = (props) => {
                 Выберите, какой курс вам подходит
             </div>
 
-            {offers.map((item : offerCard)=>(
+            {offers?.map((item : offerCard)=>(
                 <div key={item.id.toString()} className={styles["offers-offer-box"]}>
                     <div className={styles["offers-offer-box-label"]}>
                         { item.name }

@@ -8,16 +8,16 @@ import Man from '../../source/imgs/theory-points/man.png';
 import Mark from '../../source/imgs/theory-points/mark.png';
 import Ring from '../../source/imgs/theory-points/ring.png';
 import World from '../../source/imgs/theory-points/world.png';
-import {Props} from './types/FeaturesTag';
-import { url } from './scripts/tools/urlWrapper'
-import { Keyframes } from './tools/KeyFrames';
+import {Props} from '../../modules/types/FeaturesTag';
+import { url } from '../../modules/scripts/tools/urlWrapper'
+import { Keyframes } from '../../modules/components/tools/KeyFrames';
 
 import Theory from '../../source/imgs/theory.png';
 import Practice from '../../source/imgs/practice.png';
 import BrainStorm from '../../source/imgs/brainstorm.png';
 import Contests from '../../source/imgs/contests.png';
 import Black from '../../source/imgs/black.png';
-import {sleep} from './scripts/tools/sleep';
+import {sleep} from '../../modules/scripts/tools/sleep';
 
 const FeaturesTag: NextPage<Props> = (props) => {
     const {features, feature, setFeature} = props;
@@ -95,7 +95,8 @@ const FeaturesTag: NextPage<Props> = (props) => {
     };
 
     useEffect(() => {
-        setSwitchEnable(false), SwitchBackgroundImg();
+        setSwitchEnable(false), 
+        SwitchBackgroundImg();
     }, [feature]);
 
     return (
@@ -104,7 +105,7 @@ const FeaturesTag: NextPage<Props> = (props) => {
                 Чем мы занимаемся
             </div>
             <div className={styles['features-box-options']}>
-                {features.map((item) => (
+                {features?.map((item) => (
                     <div
                         key={item.id.toString()}
                         onClick={() => setFeatureByName(item.name)}
@@ -141,7 +142,7 @@ const FeaturesTag: NextPage<Props> = (props) => {
                         </div>
                     </div>
                     <div className={styles['features-box-slider-btns']}>
-                        {features.map((item) => (
+                        {features?.map((item) => (
                             <button
                                 key={item.id.toString()}
                                 onClick={() => setFeatureByName(item.name)}
