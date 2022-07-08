@@ -96,7 +96,7 @@ const FormContact: NextPage<Props> = (props) => {
                 <Keyframes name='blink' from={{backgroundColor : 'rgba(253, 236, 83, 1)'}} to={{backgroundColor : 'red'}}></Keyframes>
                 <input style={ isValidForm ? {} : {animation: 'blink 0.5s alternate ease-in-out infinite'}} value={phoneNumber} onChange={(event)=>setPhoneNumber(event.target.value)} className={styles["form-email-input"]} type='text' placeholder='+7-900-600-30-10'/>
                 <input className={styles["form-email-submit"]} type='submit' value={sendInputValue} onClick={(event)=>handleSubmit(event)}
-                onMouseEnter={() => setSendInputValue("Отправить »")}
+                onMouseEnter={() => setSendInputValue("Отправить »  ")}
                 onMouseLeave={() => setSendInputValue('Отправить')}
                 />
             </form>
