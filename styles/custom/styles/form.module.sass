@@ -10,6 +10,11 @@ $yellow-normal: rgba(253, 236, 83, 1)
     align-items: center
     justify-content: center
 
+@mixin fonts-size-media
+    font-size: $font-30px
+    @media (max-aspect-ratio: 70/100)
+        font-size: $font-20px
+
 .form-div
     // display: none !important
     position: fixed
@@ -41,7 +46,7 @@ $yellow-normal: rgba(253, 236, 83, 1)
     border-radius: calc(0.7vh + 0.7vw)
     padding: 1% 2%
     @extend .font-interface-no-up
-    font-size: $font-24px
+    @include fonts-size-media
     width: 30%
 
 .form-email-submit:active
@@ -50,12 +55,12 @@ $yellow-normal: rgba(253, 236, 83, 1)
 .form-pick-course-label
     color: white
     @extend .font-interface-no-up
-    font-size: $font-24px
+    @include fonts-size-media
 
 .form-email-p
     color: white
     @extend .font-interface-no-up
-    font-size: $font-24px
+    @include fonts-size-media
 
 .form-email-input::placeholder
     color: #000000a0
@@ -66,7 +71,7 @@ $yellow-normal: rgba(253, 236, 83, 1)
     border-radius: calc(0.7vh + 0.7vw)
     color: black
     @extend .font-interface-no-up
-    font-size: $font-24px
+    @include fonts-size-media
     outline: none
     border: none
 
@@ -76,7 +81,7 @@ $yellow-normal: rgba(253, 236, 83, 1)
     border-radius: calc(2vh + 2vw)
     padding: 1% 2%
     @extend .font-interface-no-up
-    font-size: $font-24px
+    @include fonts-size-media
     width: 30%
 
 .form-pick-course-button:hover
@@ -102,7 +107,7 @@ $yellow-normal: rgba(253, 236, 83, 1)
 
 .form-logo
     @extend .font-interface
-    font-size: $font-24px
+    @include fonts-size-media
     font-weight: 700
     color: white
 
