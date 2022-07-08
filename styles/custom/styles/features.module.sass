@@ -44,7 +44,9 @@ $features-box-size: calc(15vw + 50vh)
     font-weight: 400
     float: left
     @media (min-aspect-ratio: 1/1)
-        font-size: 3vh
+        font-size: $font-30px
+    @media (max-aspect-ratio: 60/100)
+        font-size: $font-20px
 
 .features-box-option:hover
     text-decoration: underline
@@ -112,13 +114,13 @@ $radius: calc(0.5vw + 0.5vh)
 
 .slider-point-text
     @extend .font-interface-no-up
-    font-size: $font-18px
+    font-size: $font-20px
     text-align: center
     vertical-align: middle
     height: 50%
     width: 100%
-    @media (min-aspect-ratio: 1/1)
-        font-size: 2vh
+    @media (max-aspect-ratio: 60/100)
+        font-size: $font-18px
     // background: green
 
 $arrows-size: calc((15vw + 50vh)*0.04)
@@ -150,6 +152,8 @@ $arrows-color: brightness(0) saturate(100%) invert(99%) sepia(100%) saturate(131
     display: flex
     justify-content: space-around
     align-self: flex-end
+    @media (max-aspect-ratio: 1/1)
+        width: 25%
 
 $active-btn-color: #727272fd
 
