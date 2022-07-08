@@ -21,11 +21,13 @@ $background-color: #FDEC53
 $offset-text: 2.5vh
 
 .features-box-label
-    font-size: $font-36px
+    font-size: $font-48px
     @extend .font-interface-no-up
     margin-bottom: $offset-text
     font-weight: 800
     color: $black-text
+    @media (max-aspect-ratio: 50/100)
+        font-size: $font-30px
 
 $features-box-size: calc(15vw + 50vh)
 
@@ -47,6 +49,8 @@ $features-box-size: calc(15vw + 50vh)
         font-size: $font-30px
     @media (max-aspect-ratio: 60/100)
         font-size: $font-20px
+    @media (max-aspect-ratio: 50/100)
+        font-size: $font-18px
 
 .features-box-option:hover
     text-decoration: underline
@@ -121,6 +125,8 @@ $radius: calc(0.5vw + 0.5vh)
     width: 100%
     @media (max-aspect-ratio: 60/100)
         font-size: $font-10px
+    @media (max-aspect-ratio: 40/100)
+        color: transparent
     // background: green
 
 $arrows-size: calc((15vw + 50vh)*0.04)
